@@ -1,0 +1,49 @@
+﻿@model MVCPais.Models.Pais.Pais
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+    <link rel=StyleSheet href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <h3>Estás seguro que quieres eliminar este registro?</h3>
+    <div>
+        <h4>Pais</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.idpais)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.idpais)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.paisdesc)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.paisdesc)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Regresar a la lista", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<MVCPais.Models.Pais.Pais>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel=StyleSheet href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Agregar país", "Create")
+    </p>
+    <table class="table" border="1">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.paisdesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idpais)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idpais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.paisdesc)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.idpais  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.idpais  }) |
+                @Html.ActionLink("Delete", "Delete", new { id= item.idpais })
+            </td>.
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

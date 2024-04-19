@@ -1,0 +1,43 @@
+﻿@model MVCPais.Models.Pais.Pais
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link rel=StyleSheet href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div>
+        <h4>Pais</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.idpais)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.idpais)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.paisdesc)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.paisdesc)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new {  id = Model.idpais  }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
